@@ -60,3 +60,21 @@ kubectl apply -f pod.yml
 # Usage: kubectl exec -it pods/pod_name -- bash
 # Example command to execute a shell in the nginx pod:
 kubectl exec -it pods/nginx -- bash
+
+# delete the pod created from the YAML file
+# This command will remove the pod defined in the specified YAML file from the cluster
+# Usage: kubectl delete -f pod.yml
+# Example command to delete the pod:
+kubectl delete -f pod.yml
+
+# execute a shell in the nginx pod container
+# This command will open an interactive shell session in the nginx container of the specified pod
+# Usage: kubectl exec -it pods/pod_name -c container_name -- bash
+# Example command to execute a shell in the nginx container of the nginx pod:
+kubectl exec -it pods/nginx -c nginx -- bash
+
+# command to list files in a specific directory inside the nginx pod
+# This command will list all files in the specified directory of the nginx pod
+# Usage: kubectl exec -it pods/pod_name -- ls -la /path/to/directory
+# Example command to list files in the /test directory of the nginx pod:
+kubectl exec -it pods/nginx -c ubuntu -- ls -la /test2
